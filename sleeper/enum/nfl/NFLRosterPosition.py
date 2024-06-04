@@ -16,6 +16,10 @@ class NFLRosterPosition(ModelEnum):
     SUPER_FLEX = "SUPER_FLEX"
     TE = "TE"
     WR = "WR"
+    IDP_FLEX = "IDP_FLEX"
+    DL = "DL"
+    LB = "LB"
+    DB = "DB"
 
     @classmethod
     def from_str(cls, s: str) -> NFLRosterPosition:
@@ -37,5 +41,13 @@ class NFLRosterPosition(ModelEnum):
             return NFLRosterPosition.TE
         elif s.upper() == "WR":
             return NFLRosterPosition.WR
+        elif s.upper() == "IDP_FLEX":
+            return NFLRosterPosition.IDP_FLEX
+        elif s.upper() == "DL":
+            return NFLRosterPosition.DL
+        elif s.upper() == "LB":
+            return NFLRosterPosition.LB
+        elif s.upper() == "DB":
+            return NFLRosterPosition.DB
         else:
             cls._handle_unknown_value(NFLRosterPosition, s)
