@@ -13,6 +13,7 @@ class ScoringSettings:
     bonus_rec_yd_200: float
     bonus_rush_yd_100: float
     bonus_rush_yd_200: float
+    bonus_rec_te: float
     def_2pt: float
     def_pass_def: float
     def_st_ff: float
@@ -27,6 +28,7 @@ class ScoringSettings:
     fgm_30_39: float
     fgm_40_49: float
     fgm_50p: float
+    fgm_yds: float
     fgmiss: float
     fgmiss_0_19: float
     fgmiss_20_29: float
@@ -37,6 +39,7 @@ class ScoringSettings:
     fum_lost: float
     fum_rec: float
     fum_ret_yd: float
+    fum_rec_td: float
     idp_blk_kick: float
     idp_def_td: float
     idp_ff: float
@@ -48,6 +51,11 @@ class ScoringSettings:
     idp_tkl: float
     idp_tkl_ast: float
     idp_tkl_solo: float
+    idp_qb_hit: float
+    idp_tkl_loss: float
+    idp_sack_yd: float
+    idp_int_ret_yd: float
+    idp_fum_ret_yd: float
     int: float
     int_ret_yd: float
     kr_td: float
@@ -61,6 +69,7 @@ class ScoringSettings:
     pass_sack: float
     pass_td: float
     pass_yd: float
+    pass_fd: float
     pr_td: float
     pr_yd: float
     pts_allow_0: float
@@ -76,11 +85,13 @@ class ScoringSettings:
     rec_40p: float
     rec_td: float
     rec_yd: float
+    rec_fd: float
     rush_2pt: float
     rush_40p: float
     rush_att: float
     rush_td: float
     rush_yd: float
+    rush_fd: float
     sack: float
     sack_yd: float
     safe: float
@@ -117,6 +128,7 @@ class ScoringSettings:
             yds_allow_500_549=scoring_settings_dict.get("yds_allow_500_549"),
             yds_allow_550p=scoring_settings_dict.get("yds_allow_550p"),
             fgm=scoring_settings_dict.get("fgm"),
+            fgm_yds=scoring_settings_dict.get("fgm_yds"),
             fgm_0_19=scoring_settings_dict.get("fgm_0_19"),
             fgm_20_29=scoring_settings_dict.get("fgm_20_29"),
             fgm_30_39=scoring_settings_dict.get("fgm_30_39"),
@@ -138,6 +150,9 @@ class ScoringSettings:
             pass_att=scoring_settings_dict.get("pass_att"),
             pass_yd=scoring_settings_dict.get("pass_yd"),
             pass_td=scoring_settings_dict.get("pass_td"),
+            pass_fd=scoring_settings_dict.get("pass_fd"),
+            rec_fd=scoring_settings_dict.get("rec_fd"),
+            rush_fd=scoring_settings_dict.get("rush_fd"),
             def_pass_def=scoring_settings_dict.get("def_pass_def"),
             def_td=scoring_settings_dict.get("def_td"),
             def_st_fum_rec=scoring_settings_dict.get("def_st_fum_rec"),
@@ -152,6 +167,7 @@ class ScoringSettings:
             fum_lost=scoring_settings_dict.get("fum_lost"),
             fum=scoring_settings_dict.get("fum"),
             fum_ret_yd=scoring_settings_dict.get("fum_ret_yd"),
+            fum_rec_td=scoring_settings_dict.get("fum_rec_td"),
             idp_safe=scoring_settings_dict.get("idp_safe"),
             idp_ff=scoring_settings_dict.get("idp_ff"),
             idp_blk_kick=scoring_settings_dict.get("idp_blk_kick"),
@@ -163,6 +179,11 @@ class ScoringSettings:
             idp_sack=scoring_settings_dict.get("idp_sack"),
             idp_tkl_ast=scoring_settings_dict.get("idp_tkl_ast"),
             idp_tkl_solo=scoring_settings_dict.get("idp_tkl_solo"),
+            idp_qb_hit=scoring_settings_dict.get("idp_qb_hit"),
+            idp_tkl_loss=scoring_settings_dict.get("idp_tkl_loss"),
+            idp_fum_ret_yd=scoring_settings_dict.get("idp_fum_ret_yd"),
+            idp_int_ret_yd=scoring_settings_dict.get("idp_int_ret_yd"),
+            idp_sack_yd=scoring_settings_dict.get("idp_sack_yd"),
             rush_att=scoring_settings_dict.get("rush_att"),
             pts_allow_0=scoring_settings_dict.get("pts_allow_0"),
             pts_allow_1_6=scoring_settings_dict.get("pts_allow_1_6"),
@@ -181,6 +202,7 @@ class ScoringSettings:
             bonus_rec_yd_200=scoring_settings_dict.get("bonus_rec_yd_200"),
             bonus_pass_yd_300=scoring_settings_dict.get("bonus_pass_yd_300"),
             bonus_pass_yd_400=scoring_settings_dict.get("bonus_pass_yd_400"),
+            bonus_rec_te=scoring_settings_dict.get("bonus_rec_te"),
             rec_yd=scoring_settings_dict.get("rec_yd"),
             rec_2pt=scoring_settings_dict.get("rec_2pt"),
             rec=scoring_settings_dict.get("rec"),
