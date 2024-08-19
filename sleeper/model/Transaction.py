@@ -54,3 +54,23 @@ class Transaction:
         for transaction_dict in transaction_dict_list:
             transactions.append(Transaction.from_dict(transaction_dict))
         return transactions
+
+
+    def to_dict(self) -> dict:
+        return {
+            "adds": self.adds,
+            "consenter_ids": self.consenter_ids,
+            "created": self.created,
+            "creator": self.creator,
+            "draft_picks": [draft_pick.to_dict() for draft_pick in self.draft_picks],
+            "drops": self.drops,
+            "roster_ids": self.roster_ids,
+            "settings": self.settings.to_dict(),
+            "status": self.status.value,
+            "status_updated": self.status_updated,
+            "transaction_id": self.transaction_id,
+            "type": self.type.value,
+            "waiver_budget": [faab.to_dict() for faab in self.waiver_budget],
+            "leg": self.leg,
+            "metadata": self.metadata,
+        }

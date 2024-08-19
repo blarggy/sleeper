@@ -29,3 +29,13 @@ class DraftPick:
         for draft_pick_dict in draft_pick_dict_list:
             draft_picks.append(DraftPick.from_dict(draft_pick_dict))
         return draft_picks
+
+    def to_dict(self) -> dict:
+        return {
+            "draft_id": self.draft_id,
+            "owner_id": self.owner_id,
+            "previous_owner_id": self.previous_owner_id,
+            "roster_id": self.roster_id,
+            "round": self.round,
+            "season": self.season,
+        }

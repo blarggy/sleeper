@@ -17,3 +17,9 @@ class TransactionSettings:
             waiver_bid=transaction_settings_dict.get("waiver_bid"),
             seq=transaction_settings_dict.get("seq"),
         )
+
+    def to_dict(self) -> dict:
+        return {
+            "seq": self.seq,
+            "waiver_bid": self.waiver_bid,
+        }

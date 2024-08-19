@@ -23,3 +23,10 @@ class FAABTransaction:
         for faab_transaction_dict in faab_transaction_dict_list:
             faab_transactions.append(FAABTransaction.from_dict(faab_transaction_dict))
         return faab_transactions
+
+    def to_dict(self) -> dict:
+        return {
+            "amount": self.amount,
+            "receiver": self.receiver,
+            "sender": self.sender,
+        }
