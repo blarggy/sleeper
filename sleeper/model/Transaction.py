@@ -55,22 +55,21 @@ class Transaction:
             transactions.append(Transaction.from_dict(transaction_dict))
         return transactions
 
-
     def to_dict(self) -> dict:
         return {
-            "adds": self.adds,
-            "consenter_ids": self.consenter_ids,
+            "adds": self.adds if self.adds is not None else [],
+            "consenter_ids": self.consenter_ids if self.consenter_ids is not None else [],
             "created": self.created,
             "creator": self.creator,
-            "draft_picks": [draft_pick.to_dict() for draft_pick in self.draft_picks],
-            "drops": self.drops,
-            "roster_ids": self.roster_ids,
-            "settings": self.settings.to_dict(),
-            "status": self.status.value,
+            "draft_picks": [draft_pick.to_dict() for draft_pick in self.draft_picks] if self.draft_picks is not None else [],
+            "drops": self.drops if self.drops is not None else [],
+            "roster_ids": self.roster_ids if self.roster_ids is not None else [],
+            "settings": self.settings.to_dict() if self.settings is not None else None,
+            "status": self.status.value if self.status is not None else None,
             "status_updated": self.status_updated,
             "transaction_id": self.transaction_id,
-            "type": self.type.value,
-            "waiver_budget": [faab.to_dict() for faab in self.waiver_budget],
+            "type": self.type.value if self.type is not None else None,
+            "waiver_budget": [faab.to_dict() for faab in self.waiver_budget] if self.waiver_budget is not None else [],
             "leg": self.leg,
             "metadata": self.metadata,
         }
