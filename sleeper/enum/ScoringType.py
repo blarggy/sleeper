@@ -14,6 +14,7 @@ class ScoringType(ModelEnum):
     PPR = "PPR"
     STD = "STD"
     TWO_QB = "2QB"
+    IDP = "IDP"
 
     @classmethod
     def from_str(cls, s: str) -> ScoringType:
@@ -31,5 +32,7 @@ class ScoringType(ModelEnum):
             return ScoringType.STD
         elif s.upper() == "2QB":
             return ScoringType.TWO_QB
+        elif s.upper() == "IDP":
+            return ScoringType.IDP
         else:
             cls._handle_unknown_value(ScoringType, s)
